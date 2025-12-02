@@ -4,3 +4,6 @@ Fredag 5/12 - Plan för sensor och microcontroller samt montage klart. Bibliotek
 Onsdag 10/12 - Skiss på möjlig visualisering klart enligt tidigare given lista på visualiseringar från Chart.JS https://www.chartjs.org
 
 Fredag 12/12 - Presentation av läget just nu
+
+## Tidsplan
+Tisdagen den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet"
