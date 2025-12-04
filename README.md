@@ -1,7 +1,5 @@
 # Grupplogg & Tidsplan 
 
-Torsdag 4/12 - Färdigställt vilken visualisering som passar för vårt projekt från Chart.js. 
-
 Månadg 8/12 - Skapar första verisonen av visualiseringen i HTML sida.
 
 Tisdag 9/12 - Testar diagrammet med datan från sensorn via NodeMCU.
@@ -12,6 +10,8 @@ Tisdag 16/12 - Sammanställ projketet.
 
 ## Loggbok
 Tisdagen den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet"
+
+Torsdag 4/12 - Färdigställt vilken visualisering som passar för vårt projekt från Chart.js. 
 
 ## Projekt: Fuktsensor
 Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130. Vårt mål är att utveckla en enkel lösning som kan användas av människor utan teknisk erfarenhet. Med hjälp av detta projekt har vi i gruppen lärt oss hur fuktsensorn, microkontrollers och visualisering via HTML funkar. Vi dokumenterar processen i GitHub så framtida studenter kan följa vår resa under projketets gång och lära sig av valen vi tar och misstagen vi gör längs vägen.
