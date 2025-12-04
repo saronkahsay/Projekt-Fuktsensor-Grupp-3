@@ -101,13 +101,17 @@ Läser värden från sensorn
  int percentageHumididy = map(sensorVal, wet, dry, 100, 0);
 ```
 Gör om sensorvärdet till procent 0% till 100%
-100% = blöt jord
-0% = torr jord
+  - 100% = blöt jord
+  - 0% = torr jord
 ```cpp
 Serial.print(percentageHumididy);
   Serial.println("%");
 ```
 Skriver ut resultaten i serial monitor 
+´´´cpp
+delay(100);
+```
+Pausar i 0.1 sekund mellan varjegång sensorn läser av
 
 ## Visualisering
 Vi har tänkt visualisera datan från vår sensor med hjälp av ett linjediagram, som kommer att visa fuktighetsnivån i procent (där 100% är maximal fuktighet och 0% är helt torrt). Den andra axeln visar tid, så att man kan se hur fuktighetsnivåerna i jorden förändras över tid, mellan vattningar. 
