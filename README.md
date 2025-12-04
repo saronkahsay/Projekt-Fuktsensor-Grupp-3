@@ -1,5 +1,7 @@
 # Grupplogg & Tidsplan 
 
+Torsdag 4/12 - Vi började med att undersöka olika sätt att visualisera data som passar för vårt projekt från Chart.js. 
+
 Månadg 8/12 - Skapar första verisonen av visualiseringen i HTML sida.
 
 Tisdag 9/12 - Testar diagrammet med datan från sensorn via NodeMCU.
@@ -9,18 +11,16 @@ Fredag 12/12 - Inför presentationen, ska vi ha sammanställt koden, sensors kop
 Tisdag 16/12 - Sammanställ projketet.
 
 ## Loggbok
-Tisdagen den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet"
-
-Torsdag 4/12 - Färdigställt vilken visualisering som passar för vårt projekt från Chart.js. 
+Idag den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet". Vi genomförde både torra och våta tester för att kalibera sensorn, värdet för dry hämtades från helt torr jord, medan wer defineerades av sensorn utslag i blöt jord. Dessa kaliberingspunkter kommer senare att användas för att beräkna procentuell fuktighet.
 
 ## Projekt: Fuktsensor
-Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130. Vårt mål är att utveckla en enkel lösning som kan användas av människor utan teknisk erfarenhet. Med hjälp av detta projekt har vi i gruppen lärt oss hur fuktsensorn, microkontrollers och visualisering via HTML funkar. Vi dokumenterar processen i GitHub så framtida studenter kan följa vår resa under projketets gång och lära sig av valen vi tar och misstagen vi gör längs vägen.
+Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130.
 
 ## Syfte
-Vår intention är att skapa en fuktsensor för användning i jorden som läser av hur våt eller torr den är. Datan ska sedan visualiseras grafiskt för användaren.
+Syftet med projketet är att utveckla ett vertyg som gör det lättare att ta hand om växter. Genom att mäta fuktighetsnivån i jorden och omvandla det till tydliga procentvärden får användaren snabbt en uppfattning om växtens behov av vatten. Datan ska sedan visualiseras grafiskt för användaren. Kombinationen av sensor, microcontroller och grafik presentation gör systemet både lärorikt och praktiskt.
 
 ## Användare och kontext
-Målgruppen är dem som äger växter och vill veta när de behöver vattnas. Sensorn underlättar ansvaret för användaren genom att hålla koll på fukten i jorden genom att känna av hur våt eller torr den är.
+Den primära målgruppen är privatpersoner som vill ha bättre koll över sina växter. Fuktsensorn underlättar och gör det möjligt att undvika både övervattning och undervattning genom att ge konkret information istället för gissningar. 
 
 ## Beskrivning av system
 Vi kommer att använda en fuktighetssensor som man sätter i blomjorden i sin kruka. Sensorn skickar data till microcontrollern **ESP8266**, som vi har programmerat till att översätta datan som kommer in till procent. Via WiFi så skickar sedan microcontrollern de procentuella värdena till en hemsida, där vi kommer att visualisera dem i ett diagram. 
@@ -72,46 +72,7 @@ void loop()
   delay(100);
 }
 ```
-
-```cpp
-const int dry = 595; // value for dry sensor
-const int wet = 239; // value for wet sensor
-```
-Här berättar vi för programmet vilka världen som betyder torr jord och blöt jord. 
 I koden kan vi se att ett högre sensorvärde betyder att det är torrt, och det lägre värdet är för en högre fuktighet. Dessa värden översätts sedan till procent. 
-```cpp
-void setup()
-{ 
-  Serial.begin(9600);
-}
-```
-```cpp
-setup ()
-```
-Körs en gång när programmet startar 
-```cpp
- Serial.begin(9600);
-```
-Gär så att vi kan se värden från sensorn på datorn
-```cpp
-analogRead(A0);
-```
-Läser värden från sensorn
-```cpp
- int percentageHumididy = map(sensorVal, wet, dry, 100, 0);
-```
-Gör om sensorvärdet till procent 0% till 100%
-  - 100% = blöt jord
-  - 0% = torr jord
-```cpp
-Serial.print(percentageHumididy);
-  Serial.println("%");
-```
-Skriver ut resultaten i serial monitor 
-```cpp
-delay(100);
-```
-Pausar i 0.1 sekund mellan varje gång sensorn läser av
 
 ## Visualisering
 Vi har tänkt visualisera datan från vår sensor med hjälp av ett linjediagram, som kommer att visa fuktighetsnivån i procent (där 100% är maximal fuktighet och 0% är helt torrt). Den andra axeln visar tid, så att man kan se hur fuktighetsnivåerna i jorden förändras över tid, mellan vattningar. 
