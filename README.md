@@ -17,7 +17,10 @@ Idag den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino.
 Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130.
 
 ## Syfte
-Syftet med projketet är att utveckla ett vertyg som gör det lättare att ta hand om växter. Genom att mäta fuktighetsnivån i jorden och omvandla det till tydliga procentvärden får användaren snabbt en uppfattning om växtens behov av vatten. Datan ska sedan visualiseras grafiskt för användaren. Kombinationen av sensor, microcontroller och grafik presentation gör systemet både lärorikt och praktiskt.
+Syftet med projketet är att utveckla ett vertyg som gör det lättare att ta hand om växter. Genom att mäta fuktighetsnivån i jorden och omvandla det till tydliga procentvärden får användaren snabbt en uppfattning om växtens behov av vatten. Datan ska sedan visualiseras grafiskt för användaren. Kombinationen av sensor, microcontroller och grafik presentation gör systemet både lärorikt och praktiskt. 
+<img width="579" height="399" alt="image" src="https://github.com/user-attachments/assets/97640f8c-04c0-489a-99fd-a6a387164928" />
+
+
 
 ## Användare och kontext
 Den primära målgruppen är privatpersoner som vill ha bättre koll över sina växter. Fuktsensorn underlättar och gör det möjligt att undvika både övervattning och undervattning genom att ge konkret information istället för gissningar. 
@@ -35,6 +38,10 @@ Sensorn fungerar genom en analog spänning som är proportionell till jordens va
 1. Sensorns VCC-pinne kopplas till 3.3V-pinnen på microcontrollern (den röda sladden).
 2. Sensorns GND-pinne kopplas till en GND-pinne på microcontrollern (den svarta sladden).
 3. AO-pinnen kopplas till AEUOT (A0) på microcontrollern för att få ett analogt värde som kan konverteras till fuktighetsnivå (den gula sladden).
+<img width="3072" height="4096" alt="image" src="https://github.com/user-attachments/assets/ffdff362-0a41-4601-8d27-eb251ed55253" /> 
+
+<img width="3024" height="4032" alt="image" src="https://github.com/user-attachments/assets/ac4e7bb9-3b63-4384-a1e1-edc68d19af7b" /> 
+
 
 Sedan programmerade vi vår microcontroller med sensorn i **Arduino IDE** med följande kod: 
 
