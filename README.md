@@ -25,7 +25,48 @@ Sensorn vi använder är en **Capacitive Soil Moisture Sensor v1.2**.
 
 <img width="1476" height="942" alt="Screenshot 2025-12-04 at 17 51 23" src="https://github.com/user-attachments/assets/a3919fab-474d-4209-ae1a-6e616f2e1772" />
 
-Sensorn fungerar genom en analog spänning som är proportionell till jordens vattenhalt, vilket innebär att spänningen förändras beroende på hur torr eller fuktig jorden är.
+Sensorn fungerar genom en analog spänning som är proportionell till jordens vattenhalt, vilket innebär att spänningen förändras beroende på hur torr eller fuktig jorden är. Sensorn kopplas till microcontrollern med hjälp av tre kopplingssladdar. 
+
+1. Sensorns VCC-pinne kopplas till 3.3V-pinnen på microcontrollern (den röda sladden)
+2. Sensorns GND-pinne kopplas till en GND-pinne på microcontrollern (den svarta sladden)
+3. AO-pinnen kopplas till AEUOT (A0) på microcontrollern för att få ett analogt värde som kan konverteras till fuktighetsnivå.
+
+Sedan programmerade vi vår microcontroller med sensorn i **Arduino IDE** med följande kod: 
+
+```c++
+void setup()
+{ 
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  Serial.println(analogRead(A0));
+  delay(100);
+}
+
+const int dry = 595; // value for dry sensor
+const int wet = 239; // value for wet sensor
+
+void setup()
+{ 
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int sensorVal = analogRead(A0);
+
+  // Sensor has a range of 239 to 595
+  // We want to translate this to a scale or 0% to 100%
+  int percentageHumididy = map(sensorVal, wet, dry, 100, 0); 
+
+  Serial.print(percentageHumididy);
+  Serial.println("%");
+  
+  delay(100);
+}
+```
 
 ## Visualisering
 Vi har tänkt visualisera datan från vår sensor med hjälp av ett linjediagram, som kommer att visa fuktighetsnivån i procent (där 100% är maximal fuktighet och 0% är helt torrt). Den andra axeln visar tid, så att man kan se hur fuktighetsnivåerna i jorden förändras över tid, mellan vattningar. 
