@@ -17,3 +17,14 @@ Vår intention är att skapa en fuktsensor för användning i jorden som läser 
 ## Användare och kontext
 Målgruppen är dem som äger växter och vill veta när de behöver vattnas. Sensorn underlättar ansvaret för användaren genom att hålla koll på fukten i jorden genom att känna av hur våt eller torr den är.
 
+## Beskrivning av system
+
+
+## Sensor
+
+
+## Visualisering
+
+
+## Förväntat resultat och nytta
+
