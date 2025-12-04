@@ -25,6 +25,8 @@ Sensorn vi använder är en **Capacitive Soil Moisture Sensor v1.2**.
 
 <img width="1476" height="942" alt="Screenshot 2025-12-04 at 17 51 23" src="https://github.com/user-attachments/assets/a3919fab-474d-4209-ae1a-6e616f2e1772" />
 
+Sensorn fungerar genom en analog spänning som är proportionell till jordens vattenhalt, vilket innebär att spänningen förändras beroende på hur torr eller fuktig jorden är.
+
 ## Visualisering
 Vi har tänkt visualisera datan från vår sensor med hjälp av ett linjediagram, som kommer att visa fuktighetsnivån i procent (där 100% är maximal fuktighet och 0% är helt torrt). Den andra axeln visar tid, så att man kan se hur fuktighetsnivåerna i jorden förändras över tid, mellan vattningar. 
 
