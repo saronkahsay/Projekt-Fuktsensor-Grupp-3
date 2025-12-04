@@ -27,9 +27,9 @@ Sensorn vi använder är en **Capacitive Soil Moisture Sensor v1.2**.
 
 Sensorn fungerar genom en analog spänning som är proportionell till jordens vattenhalt, vilket innebär att spänningen förändras beroende på hur torr eller fuktig jorden är. Sensorn kopplas till microcontrollern med hjälp av tre kopplingssladdar. 
 
-1. Sensorns VCC-pinne kopplas till 3.3V-pinnen på microcontrollern (den röda sladden)
-2. Sensorns GND-pinne kopplas till en GND-pinne på microcontrollern (den svarta sladden)
-3. AO-pinnen kopplas till AEUOT (A0) på microcontrollern för att få ett analogt värde som kan konverteras till fuktighetsnivå.
+1. Sensorns VCC-pinne kopplas till 3.3V-pinnen på microcontrollern (den röda sladden).
+2. Sensorns GND-pinne kopplas till en GND-pinne på microcontrollern (den svarta sladden).
+3. AO-pinnen kopplas till AEUOT (A0) på microcontrollern för att få ett analogt värde som kan konverteras till fuktighetsnivå (den gula sladden).
 
 Sedan programmerade vi vår microcontroller med sensorn i **Arduino IDE** med följande kod: 
 
