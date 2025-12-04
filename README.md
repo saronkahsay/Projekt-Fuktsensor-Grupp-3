@@ -1,6 +1,8 @@
 # Grupplogg & Tidsplan 
 
-Tisdag 2/12 - Plan för sensor och microcontroller samt montage klart. Bibliotek för sensor hittat och tester med sensor inledd. 
+
+## Loggbok
+Tisdagen den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet"
 
 Torsdag 4/12 - Färdigställt vilken visualisering som passar för vårt projekt från Chart.js. 
 
@@ -11,10 +13,6 @@ Tisdag 9/12 - Testar diagrammet med datan från sensorn via NodeMCU.
 Fredag 12/12 - Inför presentationen, ska vi ha sammanställt koden, sensors koppling, testvärderna och ha ett diagram.Fördela arbetet jämt och förbereda för presentationen.
 
 Tisdag 16/12 - Sammanställ projketet.
-
-
-## Loggbok
-Tisdagen den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet"
 
 ## Projekt: Fuktsensor
 Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130.
