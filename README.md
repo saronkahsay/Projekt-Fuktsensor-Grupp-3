@@ -79,11 +79,12 @@ const int wet = 239; // value for wet sensor
 ```
 Här berättar vi för programmet vilka världen som betyder torr jord och blöt jord. 
 I koden kan vi se att ett högre sensorvärde betyder att det är torrt, och det lägre värdet är för en högre fuktighet. Dessa värden översätts sedan till procent. 
-``cpp
+```cpp
 void setup()
 { 
   Serial.begin(9600);
 }
+```
 ```cpp
 setup ()
 ```
