@@ -92,7 +92,7 @@ Körs en gång när programmet startar
 ```cpp
  Serial.begin(9600);
 ```
-Gär så att vi kan värden från sensorn på datorn
+Gär så att vi kan se värden från sensorn på datorn
 ```cpp
 analogRead(A0);
 ```
@@ -100,7 +100,7 @@ Läser värden från sensorn
 ```cpp
  int percentageHumididy = map(sensorVal, wet, dry, 100, 0);
 ```
-Gör om sensor värdet till procent 
+Gör om sensorvärdet till procent 0% till 100%
 100% = blöt jord
 0% = torr jord
 ```cpp
