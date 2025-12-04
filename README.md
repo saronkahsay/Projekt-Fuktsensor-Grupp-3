@@ -108,7 +108,7 @@ Serial.print(percentageHumididy);
   Serial.println("%");
 ```
 Skriver ut resultaten i serial monitor 
-´´´cpp
+```cpp
 delay(100);
 ```
 Pausar i 0.1 sekund mellan varjegång sensorn läser av
