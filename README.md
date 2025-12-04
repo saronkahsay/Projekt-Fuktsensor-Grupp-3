@@ -1,9 +1,17 @@
 # Grupplogg & Tidsplan 
-Fredag 5/12 - Plan för sensor och microcontroller samt montage klart. Bibliotek för sensor hittat och tester med sensor inledd. Presentation klar
 
-Onsdag 10/12 - Skiss på möjlig visualisering klart enligt tidigare given lista på visualiseringar från Chart.JS https://www.chartjs.org
+Tisdag 2/12 - Plan för sensor och microcontroller samt montage klart. Bibliotek för sensor hittat och tester med sensor inledd. 
 
-Fredag 12/12 - Presentation av läget just nu
+Torsdag 4/12 - Färdigställt vilken visualisering som passar för vårt projekt från Chart.js. 
+
+Månadg 8/12 - Skapar första verisonen av visualiseringen i HTML sida.
+
+Tisdag 9/12 - Testar diagrammet med datan från sensorn via NodeMCU.
+
+Fredag 12/12 - Inför presentationen, ska vi ha sammanställt koden, sensors koppling, testvärderna och ha ett diagram.Fördela arbetet jämt och förbereda för presentationen.
+
+Tisdag 16/12 - Sammanställ projketet.
+
 
 ## Loggbok
 Tisdagen den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet"
