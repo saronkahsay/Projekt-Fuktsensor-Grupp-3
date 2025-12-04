@@ -14,7 +14,7 @@ Tisdag 16/12 - Sammanställ projketet.
 Tisdagen den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet"
 
 ## Projekt: Fuktsensor
-Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130.
+Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130. Vårt mål är att utveckla en enkel lösning som kan användas av människor utan teknisk erfarenhet. Med hjälp av detta projekt har vi i gruppen lärt oss hur fuktsensorn, microkontrollers och visualisering via HTML funkar. Vi dokumenterar processen i GitHub så framtida studenter kan följa vår resa under projketets gång och lära sig av valen vi tar och misstagen vi gör längs vägen.
 
 ## Syfte
 Vår intention är att skapa en fuktsensor för användning i jorden som läser av hur våt eller torr den är. Datan ska sedan visualiseras grafiskt för användaren.
