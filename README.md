@@ -17,28 +17,3 @@ Vår intention är att skapa en fuktsensor för användning i jorden som läser 
 ## Användare och kontext
 Målgruppen är dem som äger växter och vill veta när de behöver vattnas. Sensorn underlättar ansvaret för användaren genom att hålla koll på fukten i jorden genom att känna av hur våt eller torr den är.
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo 02 - onclick </title>
-    <script>
-        function makeRed() {
-            document.body.style.backgroundColor = 'red';
-            return undefined; //this can be left out
-        }
-    </script>
-</head>
-
-<body>
-    <a href="index.html">
-        <<< Back</a>
-            <hr>
-            <h1>Rubrik</h1>
-            <button ondblclick="makeRed()">Make Red</button>
-            <p id="p1"></p>
-</body>
-
-</html>
