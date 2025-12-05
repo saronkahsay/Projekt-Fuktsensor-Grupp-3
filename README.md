@@ -1,19 +1,6 @@
-# Grupplogg & Tidsplan 
 
-Torsdag 4/12 - Vi började med att undersöka olika sätt att visualisera data som passar för vårt projekt från Chart.js. 
 
-Månadg 8/12 - Skapar första verisonen av visualiseringen i HTML sida.
-
-Tisdag 9/12 - Testar diagrammet med datan från sensorn via NodeMCU.
-
-Fredag 12/12 - Inför presentationen, ska vi ha sammanställt koden, sensors koppling, testvärderna och ha ett diagram.Fördela arbetet jämt och förbereda för presentationen.
-
-Tisdag 16/12 - Sammanställ projketet.
-
-## Loggbok
-Idag den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet". Vi genomförde både torra och våta tester för att kalibera sensorn, värdet för dry hämtades från helt torr jord, medan wer defineerades av sensorn utslag i blöt jord. Dessa kaliberingspunkter kommer senare att användas för att beräkna procentuell fuktighet.
-
-## Projekt: Fuktsensor
+# Projekt: Fuktsensor
 Vi är en grupp studenter på MDU som utvecklar en fuktsensor för hemmabruk. Projektet sker som gruppuppgift i kursen ITE130.
 
 ## Syfte
@@ -130,3 +117,17 @@ Syftet med vår tjänst är att användaren ska kunna få ökad kunskap och för
 
 <img width="1319" height="1181" alt="Screenshot 2025-12-04 at 18 05 04" src="https://github.com/user-attachments/assets/7d39e5b4-846e-497e-9670-6fa06caf6a90" />
 
+## Tidsplan 
+
+Torsdag 4/12 - Vi började med att undersöka olika sätt att visualisera data som passar för vårt projekt från Chart.js. 
+
+Månadg 8/12 - Skapar första verisonen av visualiseringen i HTML sida.
+
+Tisdag 9/12 - Testar diagrammet med datan från sensorn via NodeMCU.
+
+Fredag 12/12 - Inför presentationen, ska vi ha sammanställt koden, sensors koppling, testvärderna och ha ett diagram.Fördela arbetet jämt och förbereda för presentationen.
+
+Tisdag 16/12 - Sammanställ projketet.
+
+## Loggbok
+Idag den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet". Vi genomförde både torra och våta tester för att kalibera sensorn, värdet för dry hämtades från helt torr jord, medan wer defineerades av sensorn utslag i blöt jord. Dessa kaliberingspunkter kommer senare att användas för att beräkna procentuell fuktighet.
