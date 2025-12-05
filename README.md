@@ -80,7 +80,45 @@ void loop()
 }
 ```
 I koden kan vi se att ett högre sensorvärde betyder att det är torrt, och det lägre värdet är för en högre fuktighet. Dessa värden översätts sedan till procent. 
-
+```cpp
+const int dry = 595; // value for dry sensor
+const int wet = 239; // value for wet sensor
+```
+Här berättar vi för programmet vilka världen som betyder torr jord och blöt jord. 
+I koden kan vi se att ett högre sensorvärde betyder att det är torrt, och det lägre värdet är för en högre fuktighet. Dessa värden översätts sedan till procent. 
+```cpp
+void setup()
+{ 
+  Serial.begin(9600);
+}
+```
+```cpp
+setup ()
+```
+Körs en gång när programmet startar 
+```cpp
+ Serial.begin(9600);
+```
+Gär så att vi kan se värden från sensorn på datorn
+```cpp
+analogRead(A0);
+```
+Läser värden från sensorn
+```cpp
+ int percentageHumididy = map(sensorVal, wet, dry, 100, 0);
+```
+Gör om sensorvärdet till procent 0% till 100%
+  - 100% = blöt jord
+  - 0% = torr jord
+```cpp
+Serial.print(percentageHumididy);
+  Serial.println("%");
+```
+Skriver ut resultaten i serial monitor 
+```cpp
+delay(100);
+```
+Pausar i 0.1 sekund mellan varje gång sensorn läser av
 ## Visualisering
 Vi har tänkt visualisera datan från vår sensor med hjälp av ett linjediagram, som kommer att visa fuktighetsnivån i procent (där 100% är maximal fuktighet och 0% är helt torrt). Den andra axeln visar tid, så att man kan se hur fuktighetsnivåerna i jorden förändras över tid, mellan vattningar. 
 
