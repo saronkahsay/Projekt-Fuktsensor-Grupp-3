@@ -130,4 +130,4 @@ Fredag 12/12 - Inför presentationen, ska vi ha sammanställt koden, sensors kop
 Tisdag 16/12 - Sammanställ projketet.
 
 ## Loggbok
-Idag den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet". Vi genomförde både torra och våta tester för att kalibera sensorn, värdet för dry hämtades från helt torr jord, medan wer defineerades av sensorn utslag i blöt jord. Dessa kaliberingspunkter kommer senare att användas för att beräkna procentuell fuktighet.
+Idag den 2/12 har vi monterat ihop fuktsensorn och fick den att funka i Arduino. Sen skrev vi koden och matade in värdena i "Dry" och "Wet". Vi genomförde både torra och våta tester för att kalibera sensorn, värdet för dry hämtades från helt torr jord, medans wet definerades av sensorns utslag i blöt jord. Dessa kaliberingspunkter kommer senare att användas för att beräkna procentuell fuktighet.
