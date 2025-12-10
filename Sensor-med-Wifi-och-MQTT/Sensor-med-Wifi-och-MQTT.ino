@@ -11,8 +11,8 @@ const int mqtt_port = 1883;
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-const int dry = 703; // value for dry sensor
-const int wet = 300; // value for wet sensor
+const int dry = 1024; // value for dry sensor
+const int wet = 0; // value for wet sensor
 
 void setup_wifi() {
   delay(10);
