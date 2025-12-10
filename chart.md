@@ -72,7 +72,7 @@ Kommentar:
  new Chart(ctx, {
 
 ```
-Kommentar:
+Initierar ett nytt diagram i ett canvas-element. Variabeln ctx är normalt en referens till en HTML-canvas (t.ex. document.getElementById('myChart')). 
 
 ```js
 
