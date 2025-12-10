@@ -79,7 +79,7 @@ Initierar ett nytt diagram i ett canvas-element. Variabeln ctx är normalt en re
   type: 'line', 
 
 ```
-Kommentar:
+Vi ändrade vårt diagram till ett linjediagram med “line”.
 
 ```js
 
