@@ -109,7 +109,7 @@ Namnet på linjediagrammet.
 data: [12, 100, 3, 5, 2, 3, 0],
 
 ```
-Kommentar:
+Detta är själva siffrona som ska ritas. Siffrona ritas i samma ordning som labels. 
 
 ```js
 
