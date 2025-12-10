@@ -17,8 +17,8 @@
 
 <!-- Ta inte bort! Det här scriptet behövs för att koppla upp mot MQTT-brokern och visa fuktvärdet. --> 
 <script>
-  // Change this to your PC/server's LAN IP
-  const host = "ws://127.0.0.1:9001";
+  // Byt det här till rätt IP-adress (den IP på den dator som kör MQTT-brokern)
+  const host = "ws://192.168.1.203:9001";
 
   // Connect via WebSockets
   const client = mqtt.connect(host);
