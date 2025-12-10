@@ -123,7 +123,7 @@ Tjockleken på linjen, som i det här fallet är 1 pixel (högre tal = tjockare 
 options: 
 
 ```
-Kommentar:
+Inställning för grafen. 
 
 ```js
 
