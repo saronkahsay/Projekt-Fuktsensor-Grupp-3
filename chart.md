@@ -130,4 +130,4 @@ Inställning för grafen.
 {scales: {
 
 ```
-Kommentar:
+Här bestämmer vi hur axlrana X % Y ska fungera.
