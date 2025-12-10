@@ -34,7 +34,9 @@
       }
     }
   });
-</script> ```
+</script>
+
+```
 
 ## Förklaring av koden
 
