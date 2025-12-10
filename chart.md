@@ -4,6 +4,7 @@
 
 <img width="1507" height="768" alt="Screenshot 2025-12-10 at 12 47 08" src="https://github.com/user-attachments/assets/8f313e3c-1766-48cb-a5ff-38601354aa4a" />
 
+## HTML och JavaScript
 
 ```HTML
 <div>
