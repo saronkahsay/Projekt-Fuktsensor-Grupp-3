@@ -48,7 +48,7 @@
 </div> 
 
 ```
-kommentar: 
+Vi skapar ett Canvas med id:et “myChart”. 
 
 ```js
 
