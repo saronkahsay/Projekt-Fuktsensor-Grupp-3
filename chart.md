@@ -130,4 +130,4 @@ Inställning för grafen.
 {scales: {
 
 ```
-Här bestämmer vi hur axlrana X % Y ska fungera.
+Här bestämmer vi hur X och Y-axlarna ska fungera.
