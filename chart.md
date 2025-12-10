@@ -58,7 +58,7 @@ Vi skapar ett Canvas med id:et “myChart”.
 
 ```
 
-Kommentar:
+Länkar till JavaScript-biblioteket för vår chart.
 
 ```js
 
