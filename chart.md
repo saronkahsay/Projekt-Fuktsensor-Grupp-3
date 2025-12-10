@@ -95,7 +95,7 @@ Definierar de kategorier som visas längs x-axeln. I detta fall är det veckodag
     datasets: [{
 
 ```
-Kommentar:
+Här börjar vi skriva vad digramet ska rita siffror. 
 
 ```js
 
