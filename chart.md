@@ -85,15 +85,10 @@ Vi ändrade vårt diagram till ett linjediagram med “line”.
 
 data: {
 
-```
-Kommentar:
-
-```js
-
    labels: ['Måndag 5/1', 'Tisdag 6/1', 'Onsdag 7/1', 'Torsdag 8/1', 'Fredag 9/1', 'Lördag 10/1', 'Söndag 11/1'],
 
 ```
-Kommentar:
+Definierar de kategorier som visas längs x-axeln. I detta fall är det veckodagarna med datum: Måndag 5/1 → Söndag 11/1.
 
 ```js
 
