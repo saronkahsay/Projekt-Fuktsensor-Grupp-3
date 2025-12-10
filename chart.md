@@ -102,7 +102,7 @@ Här börjar vi skriva vad digramet ska rita siffror.
 label: 'Soil Moisture (%)',
 
 ```
-Kommentar:
+Namnet på linjediagrammet.
 
 ```js
 
