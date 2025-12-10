@@ -40,4 +40,99 @@
 
 ## Förklaring av koden
 
+```js
+  <div> 
 
+  <canvas id="myChart"></canvas> 
+
+</div> 
+
+```
+kommentar: 
+
+```js
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+ <script>
+
+```
+
+Kommentar:
+
+```js
+
+  const ctx = document.getElementById('myChart');
+
+```
+Kommentar:
+
+```js
+
+ new Chart(ctx, {
+
+```
+Kommentar:
+
+```js
+
+  type: 'line', 
+
+```
+Kommentar:
+
+```js
+
+data: {
+
+```
+Kommentar:
+
+```js
+
+   labels: ['Måndag 5/1', 'Tisdag 6/1', 'Onsdag 7/1', 'Torsdag 8/1', 'Fredag 9/1', 'Lördag 10/1', 'Söndag 11/1'],
+
+```
+Kommentar:
+
+```js
+
+    datasets: [{
+
+```
+Kommentar:
+
+```js
+
+label: 'Soil Moisture (%)',
+
+```
+Kommentar:
+
+```js
+
+data: [12, 100, 3, 5, 2, 3, 0],
+
+```
+Kommentar:
+
+```js
+
+ borderWidth: 1
+
+```
+Kommentar:
+
+```js
+
+options: 
+
+```
+Kommentar:
+
+```js
+
+{scales: {
+
+```
+Kommentar:
