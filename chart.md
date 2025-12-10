@@ -1,6 +1,7 @@
 ## Koden för linjediagrammet vi har använt i projektet
 
-``` <div>
+```HTML
+<div>
   <canvas id="myChart"></canvas>
 </div>
 
