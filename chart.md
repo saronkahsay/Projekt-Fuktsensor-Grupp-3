@@ -116,7 +116,7 @@ Detta är själva siffrona som ska ritas. Siffrona ritas i samma ordning som lab
  borderWidth: 1
 
 ```
-Kommentar:
+Tjockleken på linjen, som i det här fallet är 1 pixel (högre tal = tjockare linje). 
 
 ```js
 
