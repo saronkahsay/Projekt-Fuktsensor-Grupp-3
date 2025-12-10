@@ -65,7 +65,7 @@ Länkar till JavaScript-biblioteket för vår chart.
   const ctx = document.getElementById('myChart');
 
 ```
-Kommentar:
+Hämtar canvas rutan “ myChart”. 
 
 ```js
 
