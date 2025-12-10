@@ -35,3 +35,9 @@
     }
   });
 </script> ```
+
+## Förklaringar av koden
+
+```HTML 
+type: 'line', ```
+Här ändrade vi vårt diagram till ett linjediagram. 
