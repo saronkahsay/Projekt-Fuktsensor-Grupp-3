@@ -5,13 +5,27 @@
   <title>Soil Humidity Monitor</title>
   <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
  
- <!-- Länk till stylesheet (style.css). -->  
+ <!-- Länk till stylesheet (style.css och Google Fonts). -->  
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-<h1>Soil Humidity Monitor</h1>
+<div class="app-container"> 
+
+<h1>Vecstis</h1>
+<h2>Förläng livslängden på din växt med oss</h2>
+
+<img src="Bilder/monstera_no_bg.png" alt="">
+
+<p class="description">Övervaka jordfuktigheten i dina krukväxter i realtid med vår pålitliga fuktsensor. Få exakta mätningar direkt till din enhet och håll dina växter friska och välvattnade.</p>
+
+
+
+<!-- Fuktigheten i procent (uppdateras i realtid när sensorn är på). --> 
 <div class="value" id="humidity">--%</div>
 
 <!-- ID:et för vår chart och länk till JavaScript-biblioteket för charten. --> 
@@ -47,9 +61,9 @@
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['Måndag 5/1', 'Tisdag 6/1', 'Onsdag 7/1', 'Torsdag 8/1', 'Fredag 9/1', 'Lördag 10/1', 'Söndag 11/1'],
+      labels: ['Mån 5/1', 'Tis 6/1', 'Ons 7/1', 'Tor 8/1', 'Fre 9/1', 'Lör 10/1', 'Sön 11/1'],
       datasets: [{
-        label: 'Soil Moisture (%)',
+        label: 'Fuktighetsmätare (%)',
         data: [12, 100, 3, 5, 2, 3, 0],
         borderWidth: 1
       }]
@@ -65,5 +79,7 @@
 </script>
 <!-- Slut på JavaScript. --> 
 
+
+</div>
 </body>
 </html>

@@ -1,4 +1,52 @@
  body
  {
-    font-family: Arial; padding: 20px; }
-    .value { font-size: 48px; font-weight: bold; }
+    background-color: #e4e4e4;
+    margin: 16px;
+    display: flex;
+    justify-content: center; /* Centrerar container på skärmen */
+}
+
+.app-container {
+  width: 440px;          /* Fast bredd för iPhone 16 Pro Max viewport */
+  display: flex;         /* Aktiverar flexbox */
+  flex-direction: column;
+  min-height: 100vh;     /* Fyll hela höjden */
+  background-color: #F2F0F1; /* valfritt */
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+h1
+{
+    font-family: "Italiana", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px;
+}
+
+h2
+{
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 24px;
+}
+
+p   
+{  
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#humidity
+{
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 24px;
+}
