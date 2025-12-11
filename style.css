@@ -32,6 +32,7 @@ h1
     font-style: normal;
     font-size: 64px;
     padding-left: 40px;
+    padding-top: 32px;
 }
 
 h2
@@ -80,4 +81,49 @@ p
     align-self: center; /* eller flex-start / flex-end */
     margin-bottom: 40px;
     
+}
+
+.card-group {
+    display: flex;
+    flex-direction: row; /* ← lägger korten bredvid varandra */
+    gap: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #F2F0F1;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.card.card {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important; 
+  
+}
+
+.card-body {
+    background-color: #ffffff00;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: none !important;
+}
+
+.card-title {
+    font-family: "Italiana", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #000000;
+    background-color: #ffffff00;
+}
+
+a .card-title {
+  color: inherit;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+    text-decoration: none;
 }
