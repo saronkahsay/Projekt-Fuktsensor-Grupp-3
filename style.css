@@ -4,26 +4,31 @@
     margin: 16px;
     display: flex;
     justify-content: center; /* Centrerar container på skärmen */
+
 }
 
 .app-container {
   width: 440px;          /* Fast bredd för iPhone 16 Pro Max viewport */
   display: flex;         /* Aktiverar flexbox */
   flex-direction: column;
-  min-height: 100vh;     /* Fyll hela höjden */
+  min-height: 100vh;
   background-color: #F2F0F1; /* valfritt */
-  background-image: url('Bilder/monstera_leaves_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+ 
   border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* valfritt */
-  
+}
+
+body.has-bg .app-container {
+    background-image: url('Bilder/monstera_leaves_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #F2F0F1;
 }
 
 h1
 {
     font-family: "Italiana", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
     font-size: 64px;
     padding-left: 40px;
@@ -32,7 +37,7 @@ h1
 h2
 {
      font-family: "Italiana", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
     font-size: 40px;
     padding-left: 40px;
@@ -73,6 +78,6 @@ p
     border: none;
     margin-top: auto;
     align-self: center; /* eller flex-start / flex-end */
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     
 }

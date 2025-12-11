@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dina växter</title>
+
+ <!-- Länk till stylesheet (style.css och Google Fonts). -->  
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="app-container"> 
+<h2>Cordyline</h2>
+
+<!-- Fuktigheten i procent (uppdateras i realtid när sensorn är på). --> 
+<div class="value" id="humidity">--%</div>
+
+<!-- ID:et för vår chart och länk till JavaScript-biblioteket för charten. --> 
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Ta inte bort! Det här scriptet behövs för att koppla upp mot MQTT-brokern och visa fuktvärdet. --> 
+<script>
+  // IP-adress till MQTT-servern
+  // Notera: porten (9001) är till en så kallad "websocket"!
+  const host = "ws://77.42.37.48:9001";
+
+  // Connect via WebSockets
+  const client = mqtt.connect(host);
+
+  client.on("connect", function () {
+    console.log("Connected to MQTT WebSocket broker");
+    client.subscribe("grupp3/soil/humidity");
+  });
+
+  client.on("message", function (topic, message) {
+    document.getElementById("humidity").innerText = message.toString() + "%";
+  });
+</script>
+<!-- Slut på JavaScript. --> 
+
+<!-- Scripten för vår chart --> 
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Mån 5/1', 'Tis 6/1', 'Ons 7/1', 'Tor 8/1', 'Fre 9/1', 'Lör 10/1', 'Sön 11/1'],
+      datasets: [
+        {
+          label: 'Växtens fuktighet',
+          data: [60, 40, 10, 50, 30, 60, 47], // dina data
+          borderWidth: 2,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: true,
+          tension: 0.4
+        },
+        {
+          label: 'Rekommenderad fuktighet',
+          data: [60, 60, 60, 60, 60, 60, 60], // horisontell linje
+          borderWidth: 2,
+          borderColor: 'purple',
+          borderDash: [5, 5], // streckad linje
+          fill: false,
+          pointRadius: 0 // inga punkter
+        }
+      ]
+    },
+    options: { 
+      scales: {
+        y: {
+          beginAtZero: true,
+          min: 0,
+          max: 100,
+          ticks: {
+            callback: function(value) {
+              return value + ' %'; // lägg till %
+            }
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.parsed.y + ' %'; // tooltips visar %
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
+<!-- Slut på JavaScript. --> 
+
+
+</div>
+</body>
+</html>
