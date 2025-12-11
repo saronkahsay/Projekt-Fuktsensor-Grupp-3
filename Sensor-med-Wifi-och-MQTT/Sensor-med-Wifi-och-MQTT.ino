@@ -1,11 +1,12 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "WIFI";
-const char* password = "LÖSENORD";
+const char* ssid = "MDU-guest";
+const char* password = "Frozen202512";
 
 // Replace with the IP of your Mosquitto server (not "localhost")
-const char* mqtt_server = "IP-address till datorn som kör MQTT";   
+// IP-adressen till onlineserver
+const char* mqtt_server = "77.42.37.48";   
 const int mqtt_port = 1883;
 
 WiFiClient espClient;
