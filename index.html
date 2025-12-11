@@ -4,16 +4,21 @@
   <meta charset="utf-8">
   <title>Soil Humidity Monitor</title>
   <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
-  <style>
-    body { font-family: Arial; padding: 20px; }
-    .value { font-size: 48px; font-weight: bold; }
-  </style>
+ 
+ <!-- Länk till stylesheet (style.css). -->  
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
 <h1>Soil Humidity Monitor</h1>
 <div class="value" id="humidity">--%</div>
 
+<!-- ID:et för vår chart och länk till JavaScript-biblioteket för charten. --> 
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Ta inte bort! Det här scriptet behövs för att koppla upp mot MQTT-brokern och visa fuktvärdet. --> 
 <script>
@@ -31,6 +36,31 @@
 
   client.on("message", function (topic, message) {
     document.getElementById("humidity").innerText = message.toString() + "%";
+  });
+</script>
+<!-- Slut på JavaScript. --> 
+
+<!-- Scripten för vår chart --> 
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Måndag 5/1', 'Tisdag 6/1', 'Onsdag 7/1', 'Torsdag 8/1', 'Fredag 9/1', 'Lördag 10/1', 'Söndag 11/1'],
+      datasets: [{
+        label: 'Soil Moisture (%)',
+        data: [12, 100, 3, 5, 2, 3, 0],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
   });
 </script>
 <!-- Slut på JavaScript. --> 
