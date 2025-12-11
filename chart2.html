@@ -1,0 +1,59 @@
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Måndag 5/1', 'Tisdag 6/1', 'Onsdag 7/1', 'Torsdag 8/1', 'Fredag 9/1', 'Lördag 10/1', 'Söndag 11/1'],
+      datasets: [
+        {
+          label: 'Växtens fuktighet',
+          data: [60, 40, 10, 50, 30, 60, 47], // dina data
+          borderWidth: 2,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: true,
+          tension: 0.4
+        },
+        {
+          label: 'Rekommenderad fuktighet',
+          data: [60, 60, 60, 60, 60, 60, 60], // horisontell linje
+          borderWidth: 2,
+          borderColor: 'purple',
+          borderDash: [5, 5], // streckad linje
+          fill: false,
+          pointRadius: 0 // inga punkter
+        }
+      ]
+    },
+    options: { 
+      scales: {
+        y: {
+          beginAtZero: true,
+          min: 0,
+          max: 100,
+          ticks: {
+            callback: function(value) {
+              return value + ' %'; // lägg till %
+            }
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.parsed.y + ' %'; // tooltips visar %
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
