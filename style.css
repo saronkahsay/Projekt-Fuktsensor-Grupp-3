@@ -1,6 +1,6 @@
  body
  {
-    background-color: #e4e4e4;
+    background-color: #1b1a1a;
     margin: 16px;
     display: flex;
     justify-content: center; /* Centrerar container på skärmen */
@@ -12,8 +12,12 @@
   flex-direction: column;
   min-height: 100vh;     /* Fyll hela höjden */
   background-color: #F2F0F1; /* valfritt */
-  padding-left: 32px;
-  padding-right: 32px;
+  background-image: url('Bilder/monstera_leaves_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* valfritt */
+  
 }
 
 h1
@@ -21,16 +25,17 @@ h1
     font-family: "Italiana", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 48px;
+    font-size: 64px;
+    padding-left: 40px;
 }
 
 h2
 {
-    font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
+     font-family: "Italiana", sans-serif;
+    font-weight: 700;
     font-style: normal;
-    font-size: 24px;
+    font-size: 40px;
+    padding-left: 40px;
 }
 
 p   
@@ -40,6 +45,7 @@ p
     font-weight: 200;
     font-style: normal;
     font-size: 16px;
+    padding-left: 40px;
 }
 
 #humidity
@@ -49,4 +55,24 @@ p
     font-weight: 200;
     font-style: normal;
     font-size: 24px;
+}
+
+.btn {
+    display: inline-block;
+    width: 240px;
+    padding: 10px 64px;
+    background-color: #000000;   /* bakgrundsfärg */
+    color: white;                /* textfärg */
+    font-family: "Italiana", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;       /* ta bort understrykning */
+    border-radius: 6px;          /* rundade hörn */
+    border: none;
+    margin-top: auto;
+    align-self: center; /* eller flex-start / flex-end */
+    margin-bottom: 32px;
+    
 }
