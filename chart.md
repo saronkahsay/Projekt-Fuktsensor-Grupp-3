@@ -123,7 +123,7 @@ En egenskap i dataset som säger hur tjockleken på linjen, som i det här falle
 options: 
 
 ```
-Inställning för grafen. 
+Är objekt som styr hur programmet ser ut.  
 
 ```js
 
