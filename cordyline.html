@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dina växter</title>
+    <title>Cordyline</title>
+     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
 
  <!-- Länk till stylesheet (style.css, Google Fonts). -->  
 <link rel="stylesheet" href="style.css">
@@ -18,12 +19,16 @@
 <div class="app-container"> 
 <h1>Cordyline</h1>
 
-<img src="Bilder/cordyline.png" class="plantInliningCORDYLINE" alt="Cordyline">
+<img style="height: 380px; width: 440px;" src="Bilder/cordyline.png" class="plantInliningCORDYLINE" alt="Cordyline">
+
+
 
 <h2>Fuktighetsnivå</h2>
 
 <!-- Fuktigheten i procent (uppdateras i realtid när sensorn är på). --> 
 <div class="value" id="humidity">--%</div>
+
+<p style="font-weight: bold;">60% fuktighet är optimalt för Cordyline</p>
 
 <!-- ID:et för vår chart och länk till JavaScript-biblioteket för charten. --> 
 <div>
@@ -52,18 +57,49 @@
 <!-- Slut på JavaScript. --> 
 
 <!-- Scripten för vår chart --> 
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
+let chart = null;
+
+async function fetchData() {
+  try {
+    const response = await fetch('http://localhost:3000/api/moisture');
+    const data = await response.json();
+
+    const labels = ['Mån 15/12', 'Tis 16/12', 'Ons 17/12', 'Tor 18/12',];
+
+    const values = data.map(d => d.value);
+
+    renderChart(labels, values);
+  } catch (err) {
+    console.error('Fel vid hämtning av data:', err);
+  }
+}
+
+function renderChart(labels, values) {
   const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
+  if (chart) {
+    chart.data.labels = labels;
+    chart.data.datasets[0].data = values;
+    chart.data.datasets[1].data = Array(values.length).fill(60);
+    chart.update();
+    return;
+  }
+
+  chart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['Mån 5/1', 'Tis 6/1', 'Ons 7/1', 'Tor 8/1', 'Fre 9/1', 'Lör 10/1', 'Sön 11/1'],
+      labels: labels,
       datasets: [
         {
           label: 'Växtens fuktighet',
-          data: [60, 40, 10, 50, 30, 60, 47], // dina data
-          borderWidth: 2,
+          data: values,
           borderColor: 'rgba(75, 192, 192, 1)',
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           fill: true,
@@ -71,42 +107,54 @@
         },
         {
           label: 'Rekommenderad fuktighet',
-          data: [60, 60, 60, 60, 60, 60, 60], // horisontell linje
-          borderWidth: 2,
+          data: Array(values.length).fill(60),
           borderColor: 'purple',
-          borderDash: [5, 5], // streckad linje
+          borderDash: [5, 5],
           fill: false,
-          pointRadius: 0 // inga punkter
+          pointRadius: 0
         }
       ]
     },
-    options: { 
+    options: {
       scales: {
         y: {
-          beginAtZero: true,
           min: 0,
           max: 100,
           ticks: {
-            callback: function(value) {
-              return value + ' %'; // lägg till %
-            }
-          }
-        }
-      },
-      plugins: {
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              return context.parsed.y + ' %'; // tooltips visar %
-            }
+            callback: value => value + ' %'
           }
         }
       }
     }
   });
+}
+
+// Start
+fetchData();
+
+// Uppdatera var 12:e timme
+setInterval(fetchData, 5000);
 </script>
+
 <!-- Slut på JavaScript. --> 
 
+<h3>Tips och skötselråd</h3>
+
+<ul class="list">
+  <li>Håll jorden fuktig men inte för våt. Runt 60% fuktighet är bäst.</li>
+  <li>Cordyline tål lätt uttorkning, men ska inte torka ut helt. På vintern räcker det att vattna ungefär en gång i veckan.</li>
+  <li>Trivs bäst i halvskugga, inte i direkt solljus.</li>
+  
+</ul>
+
+<button style="margin-top: 24px;" class="btn" style="background-color: #000000f9;">Mer info</button>
+
+<nav class="ios-navbar">
+  <button class="back-button">‹</button>
+ <button class="home-button">⌂</button>
+ <button class="add-button">+</button>
+
+</nav>
 
 </div>
 </body>
