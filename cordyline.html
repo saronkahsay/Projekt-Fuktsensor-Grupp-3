@@ -29,88 +29,96 @@
     <canvas id="myChart"></canvas>
   </div>
 
-<script>
-/* ===============================
-   1️⃣ MQTT – TA EMOT DATA!
-================================ */
+  <script>
+  /* ===============================
+     1️⃣ MQTT – TA EMOT DATA!
+  ================================ */
 
-const host = "ws://77.42.37.48:9001";
-const client = mqtt.connect(host);
+  const host = "ws://77.42.37.48:9001";
+  const client = mqtt.connect(host);
 
-client.on("connect", () => {
-  console.log("Connected to MQTT broker");
-  client.subscribe("grupp3/soil/humidity");
-});
+  client.on("connect", () => {
+    console.log("Connected to MQTT broker");
+    client.subscribe("grupp3/soil/humidity");
+  });
 
-/* ===============================
-   2️⃣ CHART.JS – INITIERING
-================================ */
+  /* ===============================
+     2️⃣ CHART.JS – INITIERING
+  ================================ */
 
-const labels = [];
-const moistureData = [];
-const recommendedData = [];
+  const labels = [];
+  const moistureData = [];
+  const recommendedData = [];
 
-const ctx = document.getElementById("myChart");
+  const ctx = document.getElementById("myChart");
 
-const myChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: labels,
-    datasets: [
-      {
-        label: "Växtens fuktighet",
-        data: moistureData,
-        borderWidth: 2,
-        fill: true,
-        tension: 0.4
-      },
-      {
-        label: "Rekommenderad fuktighet",
-        data: recommendedData,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }
-    ]
-  },
-  options: {
-    scales: {
-      y: {
-        min: 0,
-        max: 100,
-        ticks: {
-          callback: value => value + " %"
+  const myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "Växtens fuktighet",
+          data: moistureData,
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4
+        },
+        {
+          label: "Rekommenderad fuktighet",
+          data: recommendedData,
+          borderDash: [5, 5],
+          pointRadius: 0
+        }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          min: 0,
+          max: 100,
+          ticks: {
+            callback: value => value + " %"
+          }
         }
       }
     }
-  }
-});
+  });
 
-/* ===============================
-   3️⃣ KOPPLING: MQTT → CHART
-================================ */
+  /* ===============================
+     3️⃣ KOPPLING: MQTT → CHART med tider 07:00 & 19:00
+  ================================ */
 
-client.on("message", (topic, message) => {
-  const value = Number(message.toString());
+  client.on("message", (topic, message) => {
+    const value = Number(message.toString());
 
-  // Uppdatera text
-  document.getElementById("humidity").innerText = value + "%";
+    // Uppdatera text alltid
+    document.getElementById("humidity").innerText = value + "%";
 
-  // Lägg till data i charten
-  const time = new Date().toLocaleTimeString();
-  labels.push(time);
-  moistureData.push(value);
-  recommendedData.push(60);
+    // Kolla klockan
+    const now = new Date();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
 
-  // Begränsa historik
-  if (labels.length > 30) {
-    labels.shift();
-    moistureData.shift();
-    recommendedData.shift();
-  }
+    // Endast vid exakt 07:00 eller 19:00 ska vi lägga till i diagrammet
+    if (minute === 0 && (hour === 07 || hour === 19)) {
+      const timeLabel = now.toLocaleTimeString();
 
-  myChart.update();
-});
-</script>
+      labels.push(timeLabel);
+      moistureData.push(value);
+      recommendedData.push(60);
+
+      // Begränsa historik
+      if (labels.length > 30) {
+        labels.shift();
+        moistureData.shift();
+        recommendedData.shift();
+      }
+
+      myChart.update();
+    }
+  });
+  </script>
 
 </div>
 </body>
