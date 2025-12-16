@@ -17,6 +17,8 @@
 </head>
 <body>
 <div class="app-container"> 
+  <img src="Bilder/ios-ui.png" alt="Ios top UI" class="header">
+  <img style="height: fit-content;" src="Bilder/top-menu.png" alt="Ios top UI" class="top-menu">
 <h1>Cordyline</h1>
 
 <img style="height: 380px; width: 440px;" src="Bilder/cordyline.png" class="plantInliningCORDYLINE" alt="Cordyline">
@@ -28,7 +30,10 @@
 <!-- Fuktigheten i procent (uppdateras i realtid när sensorn är på). --> 
 <div class="value" id="humidity">--%</div>
 
-<p style="font-weight: bold;">60% fuktighet är optimalt för Cordyline</p>
+
+<p id="humidity-status" style="font-weight: bold;">
+  60% fuktighet är optimalt för Cordyline
+</p>
 
 <!-- ID:et för vår chart och länk till JavaScript-biblioteket för charten. --> 
 <div>
@@ -51,7 +56,30 @@
   });
 
   client.on("message", function (topic, message) {
-    document.getElementById("humidity").innerText = message.toString() + "%";
+    const humidityValue = Number(message.toString());
+    const humidityEl = document.getElementById("humidity");
+    const statusEl = document.getElementById("humidity-status");
+
+    humidityEl.innerText = humidityValue + "%";
+
+    if (humidityValue >= 55 && humidityValue <= 65) {
+      humidityEl.style.backgroundColor = "#d5e6e7";
+      humidityEl.style.color = "#000000";
+      statusEl.innerText = humidityValue + "% är en bra jordfuktighet för Cordyline 😊 ✅";
+      statusEl.style.color = "#000000";
+
+    } else if (humidityValue < 55) {
+      humidityEl.style.backgroundColor = "#FFCA00";
+      humidityEl.style.color = "#000000";
+      statusEl.innerText = humidityValue + "% fuktighet - jag behöver vattnas! 😭⚠️";
+      statusEl.style.color = "#000000";
+
+    } else {
+      humidityEl.style.backgroundColor = "#eb5757";
+      humidityEl.style.color = "#000000";
+      statusEl.innerText = humidityValue + "% fuktighet - jorden är för fuktig! Jag är övervattnad 😡🚨";
+      statusEl.style.color = "#000000";
+    }
   });
 </script>
 <!-- Slut på JavaScript. --> 
@@ -147,14 +175,9 @@ setInterval(fetchData, 5000);
   
 </ul>
 
-<button style="margin-top: 24px;" class="btn" style="background-color: #000000f9;">Mer info</button>
+<button style="margin-top: 24px;" class="btn" style="background-color: #d5e6e7;">Mer info</button>
 
-<nav class="ios-navbar">
-  <button class="back-button">‹</button>
- <button class="home-button">⌂</button>
- <button class="add-button">+</button>
-
-</nav>
+<img src="Bilder/nav-bar.png" alt="app nav bar" class="navbar">
 
 </div>
 </body>
