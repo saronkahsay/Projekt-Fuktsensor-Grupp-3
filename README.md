@@ -2,13 +2,13 @@
 Vi har byggt en fuktsensor som ska mäta jordfuktigheten. 
 
 ## Syfte 
-#### varför gjorde vi projektet?:
+varför gjorde vi projektet?:
 många vet inte när växter behöver vattnas 
-#### vilka problem löser de?:
+vilka problem löser de?:
 enklare att förstå växtens behov
 
 ## Användare 
-#### vem kommer använda systemet?:
+vem kommer använda systemet?:
 privatpersoner, hemma, kvinna 30-39
 
 ## kontext
