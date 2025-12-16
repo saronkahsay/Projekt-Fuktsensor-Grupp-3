@@ -3,7 +3,8 @@ Vi har byggt en fuktsensor som ska mäta jordfuktigheten.
 
 ## Syfte 
 varför gjorde vi projektet?:
-många vet inte när växter behöver vattnas 
+många vet inte när växter behöver vattnas. 
+
 vilka problem löser de?:
 enklare att förstå växtens behov
 
