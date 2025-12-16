@@ -1,4 +1,6 @@
-# Inledning
+
+ slide 1
+ # Inledning
 
 ### Frågeställningarna vi utgått från under denna projekt är 
 
@@ -15,3 +17,12 @@
 
 ### - Användaren ser löpande status på växtens välmående
 
+slide 2
+
+
+
+slide 3
+
+slide 4
+
+slide 5
