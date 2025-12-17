@@ -46,7 +46,27 @@ Användaren kan se jordfuktigheten i procent via ett diagram.
 
 
 ### Sensor & Kod 
-vilken sensor vi använder, vad den mäter, vad koden gör och vart vi fick koden. Vart kan de hitta våra koder. koden läser sensorvärdet och gör om det till procent. 
+Vi använder en ***Capacitive Soil Humidity Sensor*** för att mäta jordens fuktighet.
+Sensorn ger ett **analogt värde** som ändras beroende på hur torr eller fuktig jorden är.
+
+Mikrokontrollern som används är **ESP8266**.
+Den ansvarar för att:
+- läsa av sensorvärdet
+- bearbeta datan
+- skicka värdena vidare via WiFi
+
+ESP8266 programmeras i **Arduino IDE**.
+Koden:
+-	läser sensorvärdet
+-	använder anpassade värden för torr och blöt jord
+-	omvandlar värdet till procent
+
+##### Var finns koden?
+All kod finns i projektets **GitHub-repository**. Där hittar man:
+- Arduino-kod
+- Kod för linjediagrammet
+- HTML, CSS och JavaScript för webbsidan
+
 
 ### Visualisering 
 linjediagram över tid, live humidity %. färger?... 
