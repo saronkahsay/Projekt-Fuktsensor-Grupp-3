@@ -91,6 +91,8 @@ Sensorn är kopplat till en ESP8266, den läser av värdet från sensorn och ski
 
 Arduino IDE används för att programmera mikrokontrollern. Koden bearbeta de analoga sensorvärdena och omvandlar dem till procentuella fuktvärden. Koden hanterar WiFi-kommunikationen vilket möjliggör att mätdata skickas vidare till webbgränssnittet för visualisering. 
 
+Programmet hittar du i filen: [Sensor-med-Wifi-och-MQTT/Sensor-med-Wifi-och-MQTT.ino](Sensor-med-Wifi-och-MQTT/Sensor-med-Wifi-och-MQTT.ino)
+
 ## Linjediagram med hjälp av chart.js 
 
 För att visualisera fuktvärdena används ett linjediagram skapat med **Chart.js**, ett JavaScript-bibliotek för diagram i webbläsare.
@@ -104,10 +106,10 @@ Varje mätning av jordfuktighet visas som en punkt i diagrammet.
 ## Designade prototyp av appen i VS Code
 Vi valde att designa en prototyp av en app för det här projektet. Vi har jobbat i **Visual Studio Code** och använt oss av **HTML**, **CSS** och **JavaScript**. Prototypen för appen hittar du i dokumenten: 
 
-- index.html (det här är startsidan/första sidan) 
-- dinaväxter.html (sida två) 
-- cordyline.html (sida tre) 
-- style.css (stylesheet) 
+- [index.html](index.html) (det här är startsidan/första sidan) 
+- [dinaväxter.html](dinaväxter.html) (sida två) 
+- [cordyline.html](cordyline.html) (sida tre) 
+- [style.css](style.css) (stylesheet) 
 
 <img width="1920" height="1080" alt="vecstis-mockup-alla-tre" src="https://github.com/user-attachments/assets/020a0c0b-9e68-4e91-bc49-2d6abbaeed26" />
 
