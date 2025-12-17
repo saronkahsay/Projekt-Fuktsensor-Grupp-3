@@ -2,11 +2,10 @@
 Vi har byggt en fuktsensor som ska mäta jordfuktigheten. 
 
 ## Projektbeskrivning
-varför gjorde vi projektet?:
-Många växtägare tycker det är svårt att veta när växten ska vattnas. Vi ville skapa ett verktyg som hjälper att mäta fuktvärdet. vad är kunskapen?
 
-vilka problem löser de?:
-enklare att förstå växtens behov
+Många växtägare upplever att det är svårt att veta när och hur mycket de ska vattna sina växter. Det finns osäkerhet kring växtens faktiska behov, och detta leder ofta till övervattning eller undervattning. Konsekvenserna kan vara gula blad, skadade rötter eller i värsta fall att växten dör, vilket skapar oro och ibland frustation.
+
+Vi ville därför utveckla ett verktyg som på ett enkelt sätt mäter jordens fuktigt och visualiserar resultat. Genom att ge användarna realtidsdata om jordens tillstånd kan de fatta mer informerande beslut om vattning. Målet är att göra växtskötsel mer trygg, lättillgängligt och lärorikt, samtidigt som växterna får bättre förutsättningar att må bra och växa. 
 
 ### För att utföra projeket har vi använt: 
 
