@@ -1,7 +1,7 @@
 # *Vecstis* 
 Vi har byggt en fuktsensor som ska mäta jordfuktigheten. 
 
-## Syfte 
+## Projektbeskrivningens  
 varför gjorde vi projektet?:
 Många växtägare tycker det är svårt att veta när växten ska vattnas. Vi ville skapa ett verktyg som hjälper att mäta fuktvärdet. vad är kunskapen?
 
