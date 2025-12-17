@@ -3,26 +3,13 @@ Vi har byggt en fuktsensor som ska mäta jordfuktigheten.
 
 ## Syfte 
 varför gjorde vi projektet?:
-Många växtägare tycker det är svårt att veta när växten ska vattnas. Vi ville skapa ett verktyg som hjälper att mäta fuktvärdet. 
+Många växtägare tycker det är svårt att veta när växten ska vattnas. Vi ville skapa ett verktyg som hjälper att mäta fuktvärdet. vad är kunskapen?
 
 vilka problem löser de?:
 enklare att förstå växtens behov
 
-## Användare 
-vem kommer använda systemet?:
-privatpersoner, hemma, kvinna 30-39
-
-## kontext
-vart den används, vilken situation, 
-
 ## hur systemet funkar 
 steg för steg, sensor mäter fukt - miktokontrollern läser värdet - skickar data via WiFi - visas på HTML sida 
-
-## Designanpassning 
-ist för de första sensor värden ändra vi till %. Minimalistiskt, mobilanpassad, estetiskt fint för vår målgrupp
-
-## vad är kunskapen
-hur ofta det behöver vattnas, hur fuktigheten förändras över tid pga, årstid, ljusinsläpp. kännedom om växten 
 
 ## Sensor & Kod - vad som mäter
 vilken sensor vi använder, vad den mäter, vad koden gör och vart vi fick koden. Vart kan de hitta våra koder. koden läser sensorvärdet och gör om det till procent. 
