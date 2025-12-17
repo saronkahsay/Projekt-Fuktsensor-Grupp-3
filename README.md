@@ -87,6 +87,8 @@ Sensorn soil humidity sensor mäter jordens fuktighet. Sensorn skickar analogt v
 ESP8266 är mikrokontrollern som styr sensorn, den skickar data via WiFi. 
 Sensorn är kopplat till en ESP8266, den läser av värdet från sensorn och skickar data via WiFi. Det är grunden för hela systemet eftersom det är här mätningen sker. 
 
+Mer utförliga instruktioner för hur du kopplar in sensorn till microcontrollern hittar du här: [Del-presentation.md](Del-presentation.md)
+
 ## Programmerade microcontrollern i Arduino IDE
 
 Arduino IDE används för att programmera mikrokontrollern. Koden bearbeta de analoga sensorvärdena och omvandlar dem till procentuella fuktvärden. Koden hanterar WiFi-kommunikationen vilket möjliggör att mätdata skickas vidare till webbgränssnittet för visualisering. 
