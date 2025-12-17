@@ -9,6 +9,7 @@
 
 .app-container {
   width: 440px;          /* Fast bredd för iPhone 16 Pro Max viewport */
+  height:fit-content;
   display: flex;         /* Aktiverar flexbox */
   flex-direction: column;
   min-height: 100vh;
@@ -192,3 +193,6 @@ a {
   box-shadow: #0000000f 0px -2px 10px;
 }
 
+.header {
+    margin-left: 20px;
+}
