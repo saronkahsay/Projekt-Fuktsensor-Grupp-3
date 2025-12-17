@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dina växter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordyline</title>
+     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
 
-  <!-- CSS + typsnitt -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+ <!-- Länk till stylesheet (style.css, Google Fonts). -->  
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 
-  <!-- MQTT & Chart.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 </head>
 
 <body>
 <div class="app-container"> 
 
-  <h1>Cordyline</h1>
-  <img src="Bilder/cordyline.png" class="plantInliningCORDYLINE" alt="Cordyline">
+<img src="Bilder/ios-ui.png" alt="Ios top UI" class="header">
+
+<h1>Cordyline</h1>
+
+<img style="height: 380px; width: 440px;" src="Bilder/cordyline.png" class="plantInliningCORDYLINE" alt="Cordyline">
+
+
 
   <h2>Fuktighetsnivå</h2>
   <div class="value" id="humidity">--%</div>
@@ -29,88 +34,154 @@
     <canvas id="myChart"></canvas>
   </div>
 
+
+<p id="humidity-status" style="font-weight: bold;">
+  60% fuktighet är optimalt för Cordyline
+</p>
+
+<!-- ID:et för vår chart och länk till JavaScript-biblioteket för charten. --> 
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Ta inte bort! Det här scriptet behövs för att koppla upp mot MQTT-brokern och visa fuktvärdet. --> 
 <script>
-/* ===============================
-   1️⃣ MQTT – TA EMOT DATA!
-================================ */
+  // IP-adress till MQTT-servern
+  // Notera: porten (9001) är till en så kallad "websocket"!
+  const host = "ws://77.42.37.48:9001";
 
-const host = "ws://77.42.37.48:9001";
-const client = mqtt.connect(host);
+  // Connect via WebSockets
+  const client = mqtt.connect(host);
 
-client.on("connect", () => {
-  console.log("Connected to MQTT broker");
-  client.subscribe("grupp3/soil/humidity");
-});
+  client.on("connect", function () {
+    console.log("Connected to MQTT WebSocket broker");
+    client.subscribe("grupp3/soil/humidity");
+  });
 
-/* ===============================
-   2️⃣ CHART.JS – INITIERING
-================================ */
+  client.on("message", function (topic, message) {
+    const humidityValue = Number(message.toString());
+    const humidityEl = document.getElementById("humidity");
+    const statusEl = document.getElementById("humidity-status");
 
-const labels = [];
-const moistureData = [];
-const recommendedData = [];
+    humidityEl.innerText = humidityValue + "%";
 
-const ctx = document.getElementById("myChart");
+    if (humidityValue >= 55 && humidityValue <= 65) {
+      humidityEl.style.backgroundColor = "#d5e6e7";
+      humidityEl.style.color = "#000000";
+      statusEl.innerText = humidityValue + "% är en bra jordfuktighet för Cordyline 😊 ✅";
+      statusEl.style.color = "#000000";
 
-const myChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: labels,
-    datasets: [
-      {
-        label: "Växtens fuktighet",
-        data: moistureData,
-        borderWidth: 2,
-        fill: true,
-        tension: 0.4
-      },
-      {
-        label: "Rekommenderad fuktighet",
-        data: recommendedData,
-        borderDash: [5, 5],
-        pointRadius: 0
-      }
-    ]
-  },
-  options: {
-    scales: {
-      y: {
-        min: 0,
-        max: 100,
-        ticks: {
-          callback: value => value + " %"
+    } else if (humidityValue < 55) {
+      humidityEl.style.backgroundColor = "#FFCA00";
+      humidityEl.style.color = "#000000";
+      statusEl.innerText = humidityValue + "% fuktighet - jag behöver vattnas! 😭⚠️";
+      statusEl.style.color = "#000000";
+
+    } else {
+      humidityEl.style.backgroundColor = "#eb5757";
+      humidityEl.style.color = "#000000";
+      statusEl.innerText = humidityValue + "% fuktighet - jorden är för fuktig! Jag är övervattnad 😡🚨";
+      statusEl.style.color = "#000000";
+    }
+  });
+</script>
+<!-- Slut på JavaScript. --> 
+
+<!-- Scripten för vår chart --> 
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+let chart = null;
+
+async function fetchData() {
+  try {
+    const response = await fetch('http://localhost:3000/api/moisture');
+    const data = await response.json();
+
+    const labels = ['Mån 15/12', 'Tis 16/12', 'Ons 17/12', 'Tor 18/12',];
+
+    const values = data.map(d => d.value);
+
+    renderChart(labels, values);
+  } catch (err) {
+    console.error('Fel vid hämtning av data:', err);
+  }
+}
+
+function renderChart(labels, values) {
+  const ctx = document.getElementById('myChart');
+
+  if (chart) {
+    chart.data.labels = labels;
+    chart.data.datasets[0].data = values;
+    chart.data.datasets[1].data = Array(values.length).fill(60);
+    chart.update();
+    return;
+  }
+
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Växtens fuktighet',
+          data: values,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          fill: true,
+          tension: 0.4
+        },
+        {
+          label: 'Rekommenderad fuktighet',
+          data: Array(values.length).fill(60),
+          borderColor: 'purple',
+          borderDash: [5, 5],
+          fill: false,
+          pointRadius: 0
+        }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          min: 0,
+          max: 100,
+          ticks: {
+            callback: value => value + ' %'
+          }
         }
       }
     }
-  }
-});
+  });
+}
 
-/* ===============================
-   3️⃣ KOPPLING: MQTT → CHART
-================================ */
+// Start
+fetchData();
 
-client.on("message", (topic, message) => {
-  const value = Number(message.toString());
-
-  // Uppdatera text
-  document.getElementById("humidity").innerText = value + "%";
-
-  // Lägg till data i charten
-  const time = new Date().toLocaleTimeString();
-  labels.push(time);
-  moistureData.push(value);
-  recommendedData.push(60);
-
-  // Begränsa historik
-  if (labels.length > 30) {
-    labels.shift();
-    moistureData.shift();
-    recommendedData.shift();
-  }
-
-  myChart.update();
-});
+// Uppdatera var 12:e timme
+//setInterval(fetchData, 50000);
 </script>
+
+<!-- Slut på JavaScript. --> 
+
+<h3>Tips och skötselråd</h3>
+
+<ul class="list">
+  <li>Håll jorden fuktig men inte för våt. Runt 60% fuktighet är bäst.</li>
+  <li>Cordyline tål lätt uttorkning, men ska inte torka ut helt. På vintern räcker det att vattna ungefär en gång i veckan.</li>
+  <li>Trivs bäst i halvskugga, inte i direkt solljus.</li>
+  
+</ul>
+
+<button style="margin-top: 24px;" class="btn" style="background-color: #d5e6e7;">Mer info</button>
+
+<img src="Bilder/nav-bar.png" alt="app nav bar" class="navbar">
 
 </div>
 </body>
