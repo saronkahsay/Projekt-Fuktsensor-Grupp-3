@@ -38,7 +38,18 @@ med sensor, ESP8266, kod, plusivokit, arduino IDE, vs code, server?
 
 **Linjediagram med hjälp av chart.js** 
 
-**Designade prototyp av appen i VS Code** 
+### Designade prototyp av appen i VS Code
+Vi valde att designa en prototyp av en app för det här projektet. Vi har jobbat i **Visual Studio Code** och använt oss av **HTML**, **CSS** och **JavaScript**. Prototypen för appen hittar du i dokumenten: 
+
+- index.html (det här är startsidan/första sidan) 
+- dinaväxter.html (sida två) 
+- cordyline.html (sida tre) 
+- style.css (stylesheet) 
+
+<img width="1920" height="1080" alt="vecstis-mockup-alla-tre" src="https://github.com/user-attachments/assets/020a0c0b-9e68-4e91-bc49-2d6abbaeed26" />
+
+
+
 
 **MQTT-server** 
 
