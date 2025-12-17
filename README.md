@@ -34,7 +34,13 @@ med sensor, ESP8266, kod, plusivokit, arduino IDE, vs code, server?
 
 **ESP8266 och Soil Humidity Sensor** 
 
+Sensorn soil humidity sensor mäter jordens fuktighet. Sensorn skickar analogt värde som motsvarar fuktighet till mikrokontrollern. 
+ESP8266 är mikrokontrollern som styr sensorn, den skickar data via WiFi. 
+Sensorn är kopplat till en ESP8266, den läser av värdet från sensorn och skickar data via WiFi. Det är grunden för hela systemet eftersom det är här mätningen sker. 
+
 **Programmerade microcontrollern i Arduino IDE** 
+
+Arduino IDE används för att programmera mikrokontrollern. Koden bearbeta de analoga sensorvärdena och omvandlar dem till procentuella fuktvärden. Koden hanterar WiFi-kommunikationen vilket möjliggör att mätdata skickas vidare till webbgränssnittet för visualisering. 
 
 **Linjediagram med hjälp av chart.js** 
 
