@@ -1,14 +1,14 @@
 # *Vecstis* 
 Vi har byggt en fuktsensor som ska mäta jordfuktigheten. 
 
-## Projektbeskrivningens  
+## Projektbeskrivning
 varför gjorde vi projektet?:
 Många växtägare tycker det är svårt att veta när växten ska vattnas. Vi ville skapa ett verktyg som hjälper att mäta fuktvärdet. vad är kunskapen?
 
 vilka problem löser de?:
 enklare att förstå växtens behov
 
-## För att utföra projeket har vi använt: 
+### För att utföra projeket har vi använt: 
 
 **Plusivo Wireless Super Starter Kit**
 
@@ -20,7 +20,7 @@ enklare att förstå växtens behov
 
 **MQTT-server** 
 
-## Hur systemet funkar 
+### Hur systemet funkar 
 Vår capacitive soil humidity sensor mäter fuktigheten i jorden på en krukväxt och presenterar värdena i procent på vår webbsida. Nedan beskrivs processen steg för steg. 
 1.  **Sensorn mäter fukt** 
 Vi placerar fruktsensorn i krukväxtens jord. Sensorn mäter fuktigheten i jorden och sänder ut ett analogt värde som varierar beroende på hur torr eller blöt jorden är. 
@@ -45,13 +45,13 @@ Datan hämtas från servern och visas på en HTML-sida.
 Användaren kan se jordfuktigheten i procent via ett diagram.
 
 
-## Sensor & Kod 
+### Sensor & Kod 
 vilken sensor vi använder, vad den mäter, vad koden gör och vart vi fick koden. Vart kan de hitta våra koder. koden läser sensorvärdet och gör om det till procent. 
 
-## Visualisering 
+### Visualisering 
 linjediagram över tid, live humidity %. färger?... 
 
-## Hur utför man detta projekt
+### Hur utför man detta projekt
 med sensor, ESP8266, kod, plusivokit, arduino IDE, vs code, server?
 
 **ESP8266 och Soil Humidity Sensor** 
