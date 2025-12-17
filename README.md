@@ -9,15 +9,15 @@ Vi ville därför utveckla ett verktyg som på ett enkelt sätt mäter jordens f
 
 ### För att utföra projeket har vi använt: 
 
-**Plusivo Wireless Super Starter Kit**
+- **Plusivo Wireless Super Starter Kit**
 
-**Soil Humidity Capacitive Sensor** 
+- **Soil Humidity Capacitive Sensor** 
 
-**Visual Studio Code**
+- **Visual Studio Code**
 
-**Arduino IDE**
+- **Arduino IDE**
 
-**MQTT-server** 
+- **MQTT-server** 
 
 ### Hur systemet funkar 
 Vår capacitive soil humidity sensor mäter fuktigheten i jorden på en krukväxt och presenterar värdena i procent på vår webbsida. Nedan beskrivs processen steg för steg. 
@@ -84,6 +84,13 @@ Sensorn är kopplat till en ESP8266, den läser av värdet från sensorn och ski
 Arduino IDE används för att programmera mikrokontrollern. Koden bearbeta de analoga sensorvärdena och omvandlar dem till procentuella fuktvärden. Koden hanterar WiFi-kommunikationen vilket möjliggör att mätdata skickas vidare till webbgränssnittet för visualisering. 
 
 **Linjediagram med hjälp av chart.js** 
+För att visualisera fuktvärdena används ett linjediagram skapat med **Chart.js**, ett JavaScript-bibliotek för diagram i webbläsare.
+
+Diagrammet visas på en HTML-sida och uppdateras med data som skickas från mikrokontrollern via servern.
+Varje mätning av jordfuktighet visas som en punkt i diagrammet.
+- **Y-axeln** visar fuktighet i procent (0–100 %)
+- **X-axeln** visar tid
+
 
 ### Designade prototyp av appen i VS Code
 Vi valde att designa en prototyp av en app för det här projektet. Vi har jobbat i **Visual Studio Code** och använt oss av **HTML**, **CSS** och **JavaScript**. Prototypen för appen hittar du i dokumenten: 
