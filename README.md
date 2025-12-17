@@ -69,4 +69,14 @@ Mockups av hur appen ser ut. Från vänster till höger: index.html, dinaväxter
 ### Databas
 
 ## vad har vi lärt oss?
-Projektet visar hur sensor, programmering och visualisering kan användas för att lösa ett vardagsproblem.
+-	hur en sensor kan användas för att samla in data 
+- hur en mikrokontroll (ESP8266) kan läsa, bearbeta och skicka data vidare via WiFi
+ - hur man programmerar en mikrokontroll i Arduino IDE med C++
+-	hur rådata kan omvandlas till procent för att bli lättare att förstå
+Vi har även lärt oss att:
+-	använda Visual Studio Code för att utveckla webbdelen av projektet
+-	bygga en webbsida med HTML, CSS och JavaScript
+-	använda Chart.js för att visualisera data i ett linjediagram
+
+Projektet har gett oss förståelse för hur olika tekniker och programmeringsspråk kan samverka i ett system, från sensor och mikrokontroller till server och webbaserad visualisering.
+
