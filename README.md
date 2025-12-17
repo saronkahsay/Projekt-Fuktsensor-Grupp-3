@@ -11,9 +11,13 @@ enklare att förstå växtens behov
 ## För att utföra projeket har vi använt: 
 
 **Plusivo Wireless Super Starter Kit**
+
 **Soil Humidity Capacitive Sensor** 
+
 **Visual Studio Code**
+
 **Arduino IDE**
+
 **MQTT-server** 
 
 ## hur systemet funkar 
