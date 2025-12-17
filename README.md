@@ -20,16 +20,38 @@ enklare att förstå växtens behov
 
 **MQTT-server** 
 
-## hur systemet funkar 
-steg för steg, sensor mäter fukt - miktokontrollern läser värdet - skickar data via WiFi - visas på HTML sida 
+## Hur systemet funkar 
+Vår capacitive soil humidity sensor mäter fuktigheten i jorden på en krukväxt och presenterar värdena i procent på vår webbsida. Nedan beskrivs processen steg för steg. 
+1.  **Sensorn mäter fukt** 
+Vi placerar fruktsensorn i krukväxtens jord. Sensorn mäter fuktigheten i jorden och sänder ut ett analogt värde som varierar beroende på hur torr eller blöt jorden är. 
 
-## Sensor & Kod - vad som mäter
+2.  **Mikrokontrollern läser värdet**
+Sensorn är kopplad till ESP8266.
+Mikrokontrollern läser av det analoga sensorvärdet via en analog ingång.
+Sensorn är kopplad till mikrokontrollern: ESP8266. Den läser av det analoga sensorvärdet.
+
+3. **Bearbetning av data**
+De råa sensorvärdena är svåra att tolka för en användare.
+Därför bearbetas värdet i koden och omvandlas till procent (0–100 %), där:
+•	0 % = torr jord
+•	100 % = blöt jord
+
+4. **Data skickas via WiFi**
+ESP8266 är uppkopplad till WiFi.
+Fuktvärdet skickas vidare till en server med hjälp av MQTT.
+
+5. **Data visas för användaren**
+Datan hämtas från servern och visas på en HTML-sida.
+Användaren kan se jordfuktigheten i procent via ett diagram.
+
+
+## Sensor & Kod 
 vilken sensor vi använder, vad den mäter, vad koden gör och vart vi fick koden. Vart kan de hitta våra koder. koden läser sensorvärdet och gör om det till procent. 
 
-## visualisering 
+## Visualisering 
 linjediagram över tid, live humidity %. färger?... 
 
-## hur utför man detta projekt
+## Hur utför man detta projekt
 med sensor, ESP8266, kod, plusivokit, arduino IDE, vs code, server?
 
 **ESP8266 och Soil Humidity Sensor** 
@@ -68,7 +90,7 @@ Mockups av hur appen ser ut. Från vänster till höger: index.html, dinaväxter
 
 ### Databas
 
-## vad har vi lärt oss?
+## Vad har vi lärt oss?
 -	hur en sensor kan användas för att samla in data 
 - hur en mikrokontroll (ESP8266) kan läsa, bearbeta och skicka data vidare via WiFi
  - hur man programmerar en mikrokontroll i Arduino IDE med C++
