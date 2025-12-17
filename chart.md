@@ -116,14 +116,14 @@ Detta är själva siffrona som ska ritas. Siffrona ritas i samma ordning som lab
  borderWidth: 1
 
 ```
-Tjockleken på linjen, som i det här fallet är 1 pixel (högre tal = tjockare linje). 
+En egenskap i dataset som säger hur tjockleken på linjen, som i det här fallet är 1 pixel (högre tal = tjockare linje). 
 
 ```js
 
 options: 
 
 ```
-Inställning för grafen. 
+Är objekt som styr hur programmet ser ut.  
 
 ```js
 

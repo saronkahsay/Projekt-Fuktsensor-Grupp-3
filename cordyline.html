@@ -15,6 +15,7 @@
 
 
 </head>
+
 <body>
 <div class="app-container"> 
 
@@ -26,10 +27,12 @@
 
 
 
-<h2>Fuktighetsnivå</h2>
+  <h2>Fuktighetsnivå</h2>
+  <div class="value" id="humidity">--%</div>
 
-<!-- Fuktigheten i procent (uppdateras i realtid när sensorn är på). --> 
-<div class="value" id="humidity">--%</div>
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
 
 
 <p id="humidity-status" style="font-weight: bold;">
