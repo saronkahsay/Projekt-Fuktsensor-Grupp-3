@@ -48,7 +48,7 @@ Vi valde att designa en prototyp av en app för det här projektet. Vi har jobba
 
 <img width="1920" height="1080" alt="vecstis-mockup-alla-tre" src="https://github.com/user-attachments/assets/020a0c0b-9e68-4e91-bc49-2d6abbaeed26" />
 
-
+Mockups av hur appen ser ut. Från vänster till höger: index.html, dinaväxter.html, cordyline.html. 
 
 
 **MQTT-server** 
