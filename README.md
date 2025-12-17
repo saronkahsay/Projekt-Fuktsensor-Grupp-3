@@ -20,5 +20,17 @@ linjediagram över tid, live humidity %. färger?...
 ## hur utför man detta projekt
 med sensor, ESP8266, kod, plusivokit, arduino IDE, vs code, server?
 
+**ESP8266 och Soil Humidity Sensor** 
+
+**Programmerade microcontrollern i Arduino IDE** 
+
+**Linjediagram med hjälp av chart.js** 
+
+**Designade prototyp av appen i VS Code** 
+
+**MQTT-server** 
+
+**Databas**
+
 ## vad har vi lärt oss?
 Projektet visar hur sensor, programmering och visualisering kan användas för att lösa ett vardagsproblem.
