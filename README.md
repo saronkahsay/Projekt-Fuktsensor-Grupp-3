@@ -68,7 +68,16 @@ All kod finns i projektets **GitHub-repository**. Där hittar man:
 
 
 ### Visualisering 
-linjediagram över tid, live humidity %. färger?... 
+*Linjediagrammet gör det enkelt att*:
+- se förändringar i fuktighet över tid
+- se skillnad före och efter vattning
+- förstå hur växtens fuktighet beter sig
+
+**Live-data och färger**
+
+Diagrammet uppdateras löpande, vilket gör att användaren kan se aktuell fuktighet i **realtid**.
+Tydliga färger används för att göra diagrammet lättläst, vi använder oss av intuitiva färger så som röd, gul & grön för att tala om för användaren om jordens fuktighet. 
+
 
 ### Hur utför man detta projekt
 med sensor, ESP8266, kod, plusivokit, arduino IDE, vs code, server?
@@ -84,6 +93,7 @@ Sensorn är kopplat till en ESP8266, den läser av värdet från sensorn och ski
 Arduino IDE används för att programmera mikrokontrollern. Koden bearbeta de analoga sensorvärdena och omvandlar dem till procentuella fuktvärden. Koden hanterar WiFi-kommunikationen vilket möjliggör att mätdata skickas vidare till webbgränssnittet för visualisering. 
 
 **Linjediagram med hjälp av chart.js** 
+
 För att visualisera fuktvärdena används ett linjediagram skapat med **Chart.js**, ett JavaScript-bibliotek för diagram i webbläsare.
 
 Diagrammet visas på en HTML-sida och uppdateras med data som skickas från mikrokontrollern via servern.
