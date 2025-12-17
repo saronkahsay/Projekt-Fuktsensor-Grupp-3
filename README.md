@@ -50,6 +50,13 @@ Vi valde att designa en prototyp av en app för det här projektet. Vi har jobba
 
 Mockups av hur appen ser ut. Från vänster till höger: index.html, dinaväxter.html, cordyline.html. 
 
+**index.html** innehåller bland annat länkar till stylesheets och JavaScript-bibliotek i head-delen. I body-delen hittar man en bakgrundsbild, en “app-container” (det vill säga en container som vi har lagt allt innehåll i), en h1, h2 och fortsätt-knapp som tar en till nästa sida (dinaväxter.html). 
+
+**dinaväxter.html** innehåller samma länkar i head. I övrigt innehåller body-delen bland annat cards och card groups från Bootstrap, med bilder och text. Den översta bilden, Cordyline, tar en vidare till nästa sida (cordyline.html). 
+
+**cordyline.html** innehåller, utöver text och bild, även JavaScripten för vår fuktighetsmätare och vårt linjediagram. Vi har valt att lägga vår JavaScript i HTML-dokumentet och inte i ett separat dokument. 
+
+**style.css** är vårt stylesheet, som bland annat definierar storleken på app-containern, bakgrundsfärg, typografi, stil och olika tillstånd på fuktighetsmätaren, stil på knappar, cards, card groups och listor. 
 
 **MQTT-server** 
 
