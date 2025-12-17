@@ -90,7 +90,7 @@ Mockups av hur appen ser ut. Från vänster till höger: index.html, dinaväxter
 
 ### Databas
 
-## Vad har vi lärt oss?
+### Vad har vi lärt oss?
 -	hur en sensor kan användas för att samla in data 
 - hur en mikrokontroll (ESP8266) kan läsa, bearbeta och skicka data vidare via WiFi
  - hur man programmerar en mikrokontroll i Arduino IDE med C++
