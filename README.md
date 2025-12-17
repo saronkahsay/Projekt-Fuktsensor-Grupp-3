@@ -17,7 +17,7 @@ Vi ville därför utveckla ett verktyg som på ett enkelt sätt mäter jordens f
 
 - **Arduino IDE**
 
-- **MQTT-server** 
+- **MQTT-server och databas** 
 
 # Hur systemet funkar 
 Vår capacitive soil humidity sensor mäter fuktigheten i jorden på en krukväxt och presenterar värdena i procent på vår webbsida. Nedan beskrivs processen steg för steg. 
