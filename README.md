@@ -250,7 +250,7 @@ Vi startade den med podman på vår server:
            -e MQTT_TOPIC="grupp3/soil/humidity" \
            gunnargrop/mqtt-to-pg
 
-
+I filen [server.js](server.js) hittar du ett anrop till databasen för att hämta ut data. 
 
 # Vad har vi lärt oss?
 -	hur en sensor kan användas för att samla in data 
