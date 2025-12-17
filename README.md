@@ -58,9 +58,9 @@ Mockups av hur appen ser ut. Från vänster till höger: index.html, dinaväxter
 
 **style.css** är vårt stylesheet, som bland annat definierar storleken på app-containern, bakgrundsfärg, typografi, stil och olika tillstånd på fuktighetsmätaren, stil på knappar, cards, card groups och listor. 
 
-**MQTT-server** 
+### MQTT-server
 
-**Databas**
+### Databas
 
 ## vad har vi lärt oss?
 Projektet visar hur sensor, programmering och visualisering kan användas för att lösa ett vardagsproblem.
