@@ -26,8 +26,7 @@ Vi placerar fruktsensorn i krukväxtens jord. Sensorn mäter fuktigheten i jorde
 
 2.  **Mikrokontrollern läser värdet**
 Sensorn är kopplad till ESP8266.
-Mikrokontrollern läser av det analoga sensorvärdet via en analog ingång.
-Sensorn är kopplad till mikrokontrollern: ESP8266. Den läser av det analoga sensorvärdet.
+Mikrokontrollern läser av det analoga sensorvärdet.
 
 3. **Bearbetning av data**
 De råa sensorvärdena är svåra att tolka för en användare.
@@ -45,8 +44,6 @@ Användaren kan se jordfuktigheten i procent via ett diagram.
 
 
 # Sensor & Kod 
-Vi använder en ***Capacitive Soil Humidity Sensor*** för att mäta jordens fuktighet.
-Sensorn ger ett **analogt värde** som ändras beroende på hur torr eller fuktig jorden är.
 
 Mikrokontrollern som används är **ESP8266**.
 Den ansvarar för att:
@@ -97,7 +94,7 @@ Programmet hittar du i filen: [Sensor-med-Wifi-och-MQTT/Sensor-med-Wifi-och-MQTT
 
 ## Linjediagram med hjälp av chart.js 
 
-För att visualisera fuktvärdena används ett linjediagram skapat med **Chart.js**, ett JavaScript-bibliotek för diagram i webbläsare.
+För att visualisera fuktvärdena används ett linjediagram skapat med **Chart.js**, ett JavaScript-bibliotek för diagram.
 
 Diagrammet visas på en HTML-sida och uppdateras med data som skickas från mikrokontrollern via servern.
 Varje mätning av jordfuktighet visas som en punkt i diagrammet.
@@ -264,5 +261,5 @@ Vi har även lärt oss att:
 -	bygga en webbsida med HTML, CSS och JavaScript
 -	använda Chart.js för att visualisera data i ett linjediagram
 
-Projektet har gett oss förståelse för hur olika tekniker och programmeringsspråk kan samverka i ett system, från sensor och mikrokontroller till server och webbaserad visualisering.
+Projektet har gett oss förståelse för hur olika tekniker och programmeringsspråk kan samverka i ett system, från sensor och mikrokontroller till server och webb visualisering.
 
